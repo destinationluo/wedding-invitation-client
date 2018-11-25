@@ -1,0 +1,286 @@
+@import "../../asset/css/util";
+
+.photograph-page {
+  .animate {
+    .photo {
+      @extend .full-screen;
+      z-index: -1;
+      @include transform(scale(1.3));
+    }
+    .photo-border {
+      @extend .full-screen;
+    }
+    .black-white {
+      @extend .full-screen;
+      opacity: 0;
+    }
+    .photograph-focus {
+      width: 50px;
+      height: 50px;
+      background: url(./images/red-focus.png) 50px 50px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -25px;
+      margin-left: -25px;
+      opacity: 1;
+    }
+    .black-bg {
+      @extend .full-screen;
+      opacity: 0;
+    }
+    .wedding {
+      position: absolute;
+      top: 533px;
+      width: 400px;
+      left: 50%;
+      margin-left: -200px;
+      @include transform(scale(1.5));
+      opacity: 0;
+    }
+    .wedding-result {
+      @extend .full-screen;
+      opacity: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      .love-start {
+        position: absolute;
+        height: 195px;
+        left: 140px;
+        top: 533px;
+        width: 343px;
+      }
+      .start-button {
+        width: 323px;
+        height: 77px;
+        line-height: 77px;
+        border: 1px solid white;
+        color: white;
+        border-radius: 2px;
+        position: absolute;
+        top: 770px;
+        left: 50%;
+        margin-left: -161.5px;
+        text-align: center;
+        font-size: 38px;
+        font-family: FZKaTong;
+      }
+    }
+  }
+  /*第一次动画包含了四次blackWhite转换*/
+  .animate-first {
+    /*黑框动画*/
+    .black-white {
+      @include animation(blackWhite 2s 4 ease-out);
+    }
+    /*照片动画*/
+    .photo {
+      @include transform(scale(1.3));
+      @include animation(photo 8s forwards);
+    }
+    /*焦点动画*/
+    .photograph-focus {
+      background: url(./images/red-focus.png) 50px 50px;
+      /*2个时间  动画播放时间  动画延时播放 播放次数 播放速度曲线 停留在最后一个动画*/
+      @include animation(photographFocus 0.15s 2s 10 ease-in-out forwards);
+    }
+  }
+  /*第二次动画包含了拍照咔喳*/
+  .animate-second {
+    .photo {
+      @include transform(scale(1));
+    }
+    .black-white {
+      @include animation(blackWhiteSecond 0.5s ease-in);
+    }
+    .black-bg {
+      @include animation(blackBgSecond 0.1s 0.4s ease-out);
+    }
+    .photograph-focus {
+      background: url(./images/blue-focus.png) 50px 50px;
+      opacity: 0;
+      /*0.1s后隐藏*/
+      @include transition(opacity 0s 0.35s);
+    }
+    .wedding {
+      @include animation(weddingSecond 1s 1.5s ease-out forwards);
+    }
+  }
+  /*第三次动画包含了结果页*/
+  .animate-third {
+    .photo {
+      @include transform(scale(1));
+    }
+    .photograph-focus {
+      opacity: 0;
+    }
+    .photo-border {
+      opacity: 0;
+    }
+    .wedding-result {
+      opacity: 1;
+      @include transition(opacity 1s);
+    }
+  }
+  @keyframes weddingSecond {
+    0% {
+      @include transform(scale(1.5));
+      opacity: 1;
+    }
+    100% {
+      @include transform(scale(1));
+      opacity: 1;
+    }
+  }
+  @keyframes blackBgSecond {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      optity: 0;
+    }
+  }
+  @keyframes blackWhiteSecond {
+    0% {
+      opacity: 0;
+    }
+    90% {
+      opacity: 0.8;
+    }
+    100% {
+      optity: 0;
+    }
+  }
+  @keyframes photographFocus {
+    0% {
+      background: url(./images/blue-focus.png) 50px 50px;
+    }
+    50% {
+      background: url(./images/red-focus.png) 50px 50px;
+    }
+    100% {
+      background: url(./images/blue-focus.png) 50px 50px;
+    }
+  }
+  /*照片动画*/
+  @keyframes photo {
+    0% {
+      @include transform(scale(1.3) translate(-5px, 5px) rotate(0deg));
+    }
+    4% {
+      @include transform(scale(1.3) translate(5px, -4px) rotate(3deg));
+    }
+    7% {
+      @include transform(scale(1.3) translate(-10px, 20px));
+    }
+    10% {
+      @include transform(scale(1.3) translate(0px, 9px) rotate(0deg));
+    }
+    13% {
+      @include transform(scale(1.3) translate(15px, 20px) rotate(2deg));
+    }
+    17% {
+      @include transform(scale(1.3) translate(-10px, -10px));
+    }
+    20% {
+      @include transform(scale(1.3) translate(0px, 0px) rotate(0deg));
+    }
+
+    23% {
+      @include transform(scale(1.3) translate(-9px, 9px) rotate(0deg));
+    }
+
+    26% {
+      @include transform(scale(1.3) translate(9px, 9px) rotate(1deg));
+    }
+    30% {
+      @include transform(scale(1.1) translate(9px, -9px) rotate(3deg));
+    }
+    32% {
+      @include transform(scale(1.2) translate(0px, 0px) rotate(2deg));
+    }
+    35% {
+      @include transform(scale(1.2) translate(0px, 0px) rotate(1deg));
+    }
+    40% {
+      @include transform(scale(1.3) translate(0px, 0px) rotate(0deg));
+    }
+    68% {
+      @include transform(scale(1.3) translate(0px, 0px) rotate(0deg));
+    }
+    72% {
+      @include transform(scale(1) translate(0px, 0px) rotate(0deg));
+    }
+    100% {
+      @include transform(scale(1) translate(0px, 0px) rotate(0deg));
+    }
+  }
+  //@keyframes photo {
+  //  0% {
+  //    @include transform(scale(1.3) translate(-5px, 5px) rotate(0deg));
+  //  }
+  //  4% {
+  //    @include transform(scale(1.3) translate(5px, -4px) rotate(3deg));
+  //  }
+  //  9.33% {
+  //    @include transform(scale(1.3) translate(-10px, 20px));
+  //  }
+  //  13.33% {
+  //    @include transform(scale(1.3) translate(0px, 9px) rotate(0deg));
+  //  }
+  //  17.33% {
+  //    @include transform(scale(1.3) translate(15px, 20px) rotate(2deg));
+  //  }
+  //  23% {
+  //    @include transform(scale(1.3) translate(-10px, -10px));
+  //  }
+  //  26.7% {
+  //    @include transform(scale(1.3) translate(0px, 0px) rotate(0deg));
+  //  }
+  //
+  //  26.7% {
+  //    @include transform(scale(1.3) translate(-9px, 9px) rotate(0deg));
+  //  }
+  //
+  //  30.59% {
+  //    @include transform(scale(1.3) translate(9px, 9px) rotate(1deg));
+  //  }
+  //  34.67% {
+  //    @include transform(scale(1.1) translate(9px, -9px) rotate(3deg));
+  //  }
+  //  42.56% {
+  //    @include transform(scale(1.2) translate(0px, 0px) rotate(2deg));
+  //  }
+  //  46.55% {
+  //    @include transform(scale(1.2) translate(0px, 0px) rotate(1deg));
+  //  }
+  //  53.2% {
+  //    @include transform(scale(1.3) translate(0px, 0px) rotate(0deg));
+  //  }
+  //  90.4% {
+  //    @include transform(scale(1.3) translate(0px, 0px) rotate(0deg));
+  //  }
+  //  95.79% {
+  //    @include transform(scale(1) translate(0px, 0px) rotate(0deg));
+  //  }
+  //  100% {
+  //    @include transform(scale(1) translate(0px, 0px) rotate(0deg));
+  //  }
+  //}
+  @keyframes blackWhite {
+    0% {
+      opacity: 0.3;
+    }
+    60% {
+      opacity: 0.8;
+    }
+    80% {
+      opcity: 0.3;
+    }
+    100% {
+      optity: 0;
+    }
+  }
+}

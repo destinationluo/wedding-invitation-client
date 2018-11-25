@@ -1,0 +1,117 @@
+@import "../../asset/css/util";
+
+.bless {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  @include animation(bless-animate 0.3s ease-in-out forwards);
+  @keyframes bless-animate {
+    0% {
+      @include transform(scale(1));
+      opacity: 0;
+    }
+    100% {
+      @include transform(scale(1));
+      opacity: 1;
+    }
+  }
+  .top-box {
+    height: 20%;
+    width: 100%;
+    .left-box {
+      width: 80%;
+      height: 100%;
+      float: left;
+      .bless-name {
+        box-sizing: border-box;
+        margin-top: 1%;
+        height: 30%;
+        width: 100%;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.8);
+        font-size: 28px;
+        padding: 0 10px;
+        border-radius: 5px;
+      }
+      .bless-text {
+        box-sizing: border-box;
+        font-size: 28px;
+        margin-top: 1%;
+        height: 67%;
+        width: 100%;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        resize: none;
+        border-radius: 5px;
+      }
+    }
+    .right-box {
+      color: white;
+      width: 20%;
+      height: 100%;
+      float: left;
+      font-size: 30px;
+      text-align: center;
+      .commit {
+        width: 100%;
+        height: 57%;
+        border-radius: 3px;
+        background-color: #DC325F;
+        opacity: 0.9;
+        line-height: 57%;
+        margin-top: 4%;
+        display: table;
+        p {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+      .close {
+        width: 100%;
+        height: 41%;
+        border-radius: 3px;
+        background-color: black;
+        opacity: 0.5;
+        margin-top: 2%;
+        display: table;
+        p {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  .bottom-box {
+    width: 100%;
+    margin-top: 20px;
+    height: 80%;
+    overflow-y: scroll;
+    .bless-item {
+      word-wrap: break-word;
+      word-break: break-all;
+      margin-top: 10px;
+      margin-bottom: 60px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 6px;
+      padding: 20px;
+      color: gray;
+      text-shadow: none;
+      font-size: 26px;
+      width: 65%;
+    }
+    .bless-item-left {
+      margin-left: 20px;
+      float: left;
+    }
+    .bless-item-right {
+      margin-right: 20px;
+      float: right;
+    }
+  }
+}

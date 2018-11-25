@@ -1,0 +1,40 @@
+@import "../../asset/css/util";
+
+.talk-page {
+  .bg {
+    background-color: rgba(0, 0, 0, 0.56);
+  }
+  .function {
+    position: absolute;
+    top: -93px;
+    left: 0;
+    width: 100%;
+  }
+  .hung-up {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    left: 50%;
+    margin-left: -80px;
+    bottom: 82px;
+  }
+  .count-down-title {
+    width: 100%;
+    text-align: center;
+    height: 77px;
+    line-height: 77px;
+    color: white;
+    font-size: 52px;
+    font-family: FZKaTong;
+    position: absolute;
+    top: 90px;
+  }
+  .count-down-time {
+    width: 100%;
+    text-align: center;
+    font-size: 31px;
+    color: white;
+    position: absolute;
+    top: 185px;
+  }
+}

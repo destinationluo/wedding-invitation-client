@@ -1,0 +1,66 @@
+@import "../../asset/css/util";
+
+.photos-page {
+  .photos {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .photos-left-leave {
+    opacity: 1;
+    @include transform(translateX(0px));
+    transition: opacity .6s ease-out, transform .6s ease-out;
+  }
+  .photos-left-leave-active {
+    opacity: 0;
+    @include transform(translateX(-628px));
+  }
+  .photos-right-leave {
+    opacity: 1;
+    left: 0;
+    transition: opacity .6s ease-out, transform .6s ease-out;
+  }
+  .photos-right-leave-active {
+    opacity: 0;
+    @include transform(translateX(628px));
+  }
+  .row {
+    position: absolute;
+    width: 36px;
+    height: 60px;
+    top: 50%;
+    margin-top: -30px;
+    z-index: 3;
+  }
+  .left-row {
+    left: 12px;
+    @include animation(left-row 1s linear infinite);
+  }
+  .right-row {
+    right: 12px;
+    @include animation(right-row 1s linear infinite);
+  }
+  @keyframes left-row {
+    0% {
+      opacity: 0;
+      @include transform(translateX(0px));
+    }
+    100% {
+      opacity: 1;
+      @include transform(translateX(-12px));
+    }
+  }
+  @keyframes right-row {
+    0% {
+      opacity: 0;
+      @include transform(translateX(0px));
+    }
+    100% {
+      opacity: 1;
+      @include transform(translateX(12px));
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import "../../asset/css/util";
+
+.call-page {
+  .bg {
+    background-color: rgba(0, 0, 0, 0.31);
+  }
+  .img-line-1 {
+    position: absolute;
+    width: 172px;
+    height: 172px;
+    bottom: 332px;
+  }
+  .tip {
+    left: 103px;
+  }
+  .message {
+    right: 114px;
+  }
+  .img-line-2 {
+    position: absolute;
+    width: 163px;
+    height: 163px;
+    bottom: 90px;
+  }
+  .refuse {
+    left: 110px;
+  }
+  .answer {
+    right: 110px;
+    @include animation(call-answer-animation 2s infinite);
+  }
+
+  /*接听按钮动画*/
+  @keyframes call-answer-animation {
+    20% {
+      @include transform(scale(1.1) rotate(0deg))
+    }
+    30% {
+      @include transform(scale(1.1) rotate(10deg))
+    }
+    40% {
+      @include transform(scale(1.1) rotate(-10deg))
+    }
+    50% {
+      @include transform(scale(1.1) rotate(10deg))
+    }
+    60% {
+      @include transform(scale(1.1) rotate(-10deg))
+    }
+    70% {
+      @include transform(scale(1.1) rotate(10deg))
+    }
+    80% {
+      @include transform(scale(1.1) rotate(-10deg))
+    }
+    90% {
+      @include transform(scale(1.1) rotate(10deg))
+    }
+  }
+}

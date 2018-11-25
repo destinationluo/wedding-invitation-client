@@ -1,0 +1,116 @@
+@import "../../asset/css/util";
+
+.snapshot-page {
+  .bg-img {
+    img {
+      z-index: 1;
+    }
+  }
+  .photo {
+    position: absolute;
+    height: 427px;
+    transform: rotate(0deg);
+    left: 0px;
+    top: 450px;
+    width: 640px;
+    opacity: 0;
+  }
+  .first-img {
+    @include animation(firstImgAnimate 20s ease infinite both)
+  }
+  .second-img {
+    @include animation(secondImgAnimate 20s ease infinite both)
+  }
+  @keyframes firstImgAnimate {
+    0% {
+      @include transform(scaleX(1.3) scaleY(1.3) translateX(34px) translateY(36px) rotate(8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 0;
+    }
+
+    14% {
+      @include transform(scaleX(1.3) scaleY(1.3) translateX(-44px) translateY(27px) rotate(8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 0;
+    }
+    26% {
+      @include transform(scaleX(1.5) scaleY(1.5) translateX(-6px) translateY(-40px) rotate(8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 0;
+    }
+    40% {
+      @include transform(scaleX(1) scaleY(1) translateX(0px) translateY(0px) rotate(8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 0;
+    }
+    52% {
+      @include transform(scaleX(1.3) scaleY(1.3) translateX(34px) translateY(36px) rotate(8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 1;
+    }
+    62% {
+      @include transform(scaleX(1.3) scaleY(1.3) translateX(-9px) translateY(-5px) rotate(-8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 1;
+    }
+
+    74% {
+      @include transform(scaleX(1.5) scaleY(1.5) translateX(0px) translateY(0px) rotate(-8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 1;
+    }
+    75% {
+      @include transform(scaleX(1.5) scaleY(1.5) translateX(0px) translateY(0px) rotate(-8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 1;
+    }
+
+    86% {
+      @include transform(scaleX(1.1) scaleY(1.1) translateX(0px) translateY(0px) rotate(8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 0;
+    }
+
+    100% {
+      @include transform(scaleX(1.3) scaleY(1.3) translateX(34px) translateY(36px) rotate(8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 0;
+    }
+  }
+  @keyframes secondImgAnimate {
+    0% {
+      @include transform(scaleX(1.3) scaleY(1.3) translateX(34px) translateY(36px) rotate(8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 1;
+    }
+
+    14% {
+      @include transform(scaleX(1.3) scaleY(1.3) translateX(-44px) translateY(27px) rotate(8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 1;
+    }
+    26% {
+      @include transform(scaleX(1.5) scaleY(1.5) translateX(-6px) translateY(-40px) rotate(8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 1;
+    }
+    40% {
+      @include transform(scaleX(1) scaleY(1) translateX(0px) translateY(0px) rotate(8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 1;
+    }
+    52% {
+      @include transform(scaleX(1.3) scaleY(1.3) translateX(34px) translateY(36px) rotate(8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 0;
+    }
+    62% {
+      @include transform(scaleX(1.3) scaleY(1.3) translateX(-9px) translateY(-5px) rotate(-8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 0;
+    }
+
+    74% {
+      @include transform(scaleX(1.5) scaleY(1.5) translateX(0px) translateY(0px) rotate(-8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 0;
+    }
+    75% {
+      @include transform(scaleX(1.5) scaleY(1.5) translateX(0px) translateY(0px) rotate(-8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 0;
+    }
+
+    86% {
+      @include transform(scaleX(1.1) scaleY(1.1) translateX(0px) translateY(0px) rotate(8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 1;
+    }
+
+    100% {
+      @include transform(scaleX(1.3) scaleY(1.3) translateX(34px) translateY(36px) rotate(8deg) rotateX(0deg) rotateY(0deg));
+      opacity: 1;
+    }
+  }
+}

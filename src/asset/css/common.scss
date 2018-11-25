@@ -1,0 +1,100 @@
+@import "./util";
+
+/*字体*/
+@font-face {
+  font-family: FZKaTong;
+  src: url('../font/FZKaTong.ttf');
+}
+
+@font-face {
+  font-family: ZHSRXT;
+  src: url('../font/ZHSRXT.ttf');
+}
+
+@font-face {
+  font-family: FZShouJinShu;
+  src: url('../font/FZShouJinShu.ttf');
+}
+
+body {
+  font-size: 14px;
+}
+
+html, body, #app, #root, #index-page-box {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+article, aside, blockquote, body, button, code, dd, details, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, input, legend, li, menu, nav, ol, p, pre, section, td, textarea, th, ul {
+  padding: 0;
+  margin: 0;
+}
+
+div {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.full-page {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.height-100 {
+  height: 100%;
+}
+
+.z-bg {
+  z-index: -1;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+.z-2 {
+  z-index: 2;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/*App.js页面切换动画*/
+
+.page-change-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-out;
+}
+
+.page-change-enter.page-change-enter-active {
+  opacity: 1;
+}
+
+.page-change-leave {
+  opacity: 1;
+  transition: opacity .3s ease-out;
+}
+
+.page-change-leave.page-change-leave-active {
+  opacity: 0;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent
+}

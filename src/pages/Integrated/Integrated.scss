@@ -1,0 +1,123 @@
+@import "../../asset/css/util";
+
+.integrated-page {
+  .bg {
+    background-color: rgba(0, 0, 0, 0.45);
+  }
+  .white-circle {
+    position: absolute;
+    height: 671px;
+    width: 377px;
+    transform: rotate(0deg);
+    left: -30px;
+    top: 350px;
+    opacity: 0.6;
+    animation: whiteCircle 2s ease 1 both;
+  }
+
+  .item-1 {
+    left: 187px;
+    top: 365px;
+    img {
+      @include animation(itemImgAnimate 0.7s ease 1 both);
+    }
+    p {
+      @include animation(itemTitleAnimate 2s ease 1 both);
+    }
+  }
+  .item-2 {
+    left: 292px;
+    top: 538px;
+    img {
+      @include animation(itemImgAnimate 0.7s 0.5s ease 1 both);
+    }
+    p {
+      @include animation(itemTitleAnimate 2s 0.7s ease 1 both);
+    }
+  }
+  .item-3 {
+    left: 270px;
+    top: 737px;
+    img {
+      @include animation(itemImgAnimate 0.7s 1s ease 1 both);
+    }
+    p {
+      @include animation(itemTitleAnimate 2s 1.2s ease 1 both);
+    }
+  }
+  .integrated-back {
+    left: 208px;
+    bottom: 20px;
+    @include animation(backAnimate 1s 1.5s 1 both);
+  }
+  .integrated-item {
+    position: absolute;
+    width: 334px;
+    height: 134px;
+    img {
+      width: 134px;
+      height: 134px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      @include transform(scale(0));
+    }
+    p {
+      position: absolute;
+      font-family: FZKaTong;
+      color: white;
+    }
+    .p-title {
+      left: 136px;
+      font-size: 32px;
+      top: 21px;
+    }
+    .p-intro {
+      font-size: 26px;
+      left: 147px;
+      top: 65px;
+    }
+  }
+  @keyframes whiteCircle {
+    0% {
+      @include transform(translateX(-625px));
+      opacity: 0;
+    }
+    100% {
+      @include transform(translateX(0px));
+      opacity: 0.6;
+    }
+  }
+  @keyframes itemImgAnimate {
+    0% {
+      @include transform(scale(0));
+    }
+    70% {
+      @include transform(scale(1.2));
+    }
+    90% {
+      @include transform(scale(0.9));
+    }
+    100% {
+      @include transform(scale(1));
+    }
+  }
+  @keyframes itemTitleAnimate {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes backAnimate {
+    0% {
+      @include transform(translate(625px) translate3d(0, 0, 0));
+      opacity: 0;
+    }
+    100% {
+      @include transform(translateX(0px) translate3d(0, 0, 0));
+      opacity: 0.6;
+    }
+  }
+}

@@ -1,0 +1,152 @@
+@import "../../asset/css/util";
+
+.desktop-page {
+  .bg {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .icon {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .white-bottom {
+    z-index: 0;
+    height: 218px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  .top-hot-spot {
+    width: 130px;
+    height: 162px;
+    position: absolute;
+    top: 24px;
+    z-index: 3;
+    div {
+      width: 100%;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      position: absolute;
+    }
+    .top-text {
+      font-size: 26px;
+      font-family: FZKaTong;
+      top: 10px;
+    }
+    .middle-text {
+      font-size: 60px;
+      font-family: SimHei;
+      top: 51px;
+      color: rgb(51, 51, 51);
+    }
+    .bottom-text {
+      font-size: 26px;
+      font-family: ZHSRXT;
+      top: 130px;
+      color: #222020;
+    }
+  }
+
+  .bottom-hot-spot {
+    width: 130px;
+    height: 133px;
+    position: absolute;
+    bottom: 41px;
+    z-index: 4;
+  }
+
+  .red-point {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    z-index: 3
+  }
+  /*红点动画 1*/
+  .red-point-animate-1 {
+    opacity: 0;
+    /*2个时间  动画播放时间  动画延时播放 播放次数 播放速度曲线 停留在最后一个动画*/
+    @include animation(red-point-animate-1 0.5s 1.5s 2 ease-in-out forwards);
+  }
+  @keyframes red-point-animate-1 {
+    0% {
+      @include transform(scale(1));
+      opacity: 1;
+    }
+    50% {
+      @include transform(scale(1.2));
+      opacity: 1;
+    }
+    100% {
+      @include transform(scale(1));
+      opacity: 1;
+    }
+  }
+  /*红点动画 2*/
+  .red-point-animate-2 {
+    /*2个时间  动画播放时间  动画延时播放 播放次数*/
+    @include animation(red-point-animate-2 0.3s 0.4s 3);
+  }
+  @keyframes red-point-animate-2 {
+    0% {
+      @include transform(rotate(0deg) scale(1.1))
+    }
+    25% {
+      @include transform(rotate(-20deg) scale(1.1))
+    }
+    50% {
+      @include transform(rotate(0deg) scale(1.1))
+    }
+    75% {
+      @include transform(rotate(20deg) scale(1.1))
+    }
+    100% {
+      @include transform(rotate(0deg) scale(1.1))
+    }
+  }
+
+  .video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    z-index: 5;
+    /*2个时间  动画播放时间  动画延时播放 播放次数 播放速度曲线 停留在最后一个动画*/
+    @include animation(video-animate 0.5s ease-in-out forwards);
+    .close {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 3;
+    }
+    iframe {
+      position: absolute;
+      top: 50%;
+      margin-top: -230px;
+      border: 0;
+      width: 100%;
+      height: 460px;
+    }
+  }
+  @keyframes video-animate {
+    0% {
+      @include transform(scale(1));
+      opacity: 0;
+    }
+    100% {
+      @include transform(scale(1));
+      opacity: 1;
+    }
+  }
+}

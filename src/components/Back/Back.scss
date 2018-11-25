@@ -1,0 +1,19 @@
+.back {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 145px;
+  left: 50%;
+  margin-left: -50px;
+  z-index: 4;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.back-left-top {
+  left: 50px;
+  top: 38px;
+  margin-left: 0;
+}

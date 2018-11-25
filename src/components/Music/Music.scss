@@ -1,0 +1,66 @@
+@import "../../asset/css/util";
+
+.music {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 2;
+
+  i {
+    width: 48px;
+    height: 48px;
+    display: block;
+    position: absolute;
+  }
+  .music-icon {
+    background: url(./images/music.png) no-repeat;
+  }
+  .circle-1 {
+    background: url(./images/circle-1.png) no-repeat;
+  }
+  .circle-2 {
+    background: url(./images/circle-2.png) no-repeat;
+  }
+  .circle-3 {
+    background: url(./images/circle-3.png) no-repeat;
+  }
+}
+
+.music-play {
+  .music-icon {
+    @include animation(musicIcon 1.5s ease infinite)
+  }
+  .circle-1 {
+    @include animation(musicIcon 0.5s 0.3s ease infinite)
+  }
+  .circle-2 {
+    @include animation(musicIcon 0.5s 0.4s ease infinite)
+  }
+  .circle-3 {
+    @include animation(musicIcon 0.5s 0.5s ease infinite)
+  }
+  @keyframes musicCircle {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes musicIcon {
+    0% {
+      @include transform(translateY(0));
+    }
+    50% {
+      @include transform(translateY(-5px));
+    }
+    100% {
+      @include transform(translateY(0));
+    }
+  }
+}
