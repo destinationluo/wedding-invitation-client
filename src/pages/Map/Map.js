@@ -16,11 +16,11 @@ export default class Map extends Component {
 
     componentDidMount() {
         if (userType == 'boy') {
-            var point = new BMap.Point(110.46115, 34.963216);
-            var title = '山西省永济市西信昌村';
+            var point = new BMap.Point(105.096734, 31.097837);
+            var title = '四川省三台县梓州国际酒店潼川府';
         } else {
-            var point = new BMap.Point(113.401631, 38.094085);
-            var title = '山西省阳泉市盂县金港大酒店';
+            var point = new BMap.Point(105.096734, 31.097837);
+            var title = '四川省三台县梓州国际酒店潼川府';
         }
 
 
@@ -28,8 +28,9 @@ export default class Map extends Component {
         mapElement.style.zoom = 640 / parseInt(window.screen.width);
         var map = new BMap.Map("map");    // 创建Map实例
         map.centerAndZoom(point, 14);  // 初始化地图,设置中心点坐标和地图级别
-        map.setCurrentCity("运城");          // 设置地图显示的城市 此项是必须设置的
+        map.setCurrentCity("三台县");          // 设置地图显示的城市 此项是必须设置的
         map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+        map.setMapStyle({style: 'redalert'});
         /*地图颜色*/
         var styleJson = [
             {
@@ -57,7 +58,7 @@ export default class Map extends Component {
         map.addOverlay(marker);              // 将标注添加到地图中
 
         /*信息框*/
-        var infoWindow = new BMapLib.SearchInfoWindow(map, "亲耐滴，快来玩啊~", {
+        var infoWindow = new BMapLib.SearchInfoWindow(map, "我们的婚礼等你见证~", {
             title: title, //标题
             width: 290, //宽度
             height: 40, //高度

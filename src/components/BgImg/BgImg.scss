@@ -4,10 +4,11 @@
 .bg-img {
   img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    overflow: hidden;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0%;
+    left: 0%;
     z-index: -1;
   }
 }
@@ -21,7 +22,7 @@
 
 @keyframes bgImgAnimate {
   50% {
-    @include transform(scale(1.3))
+    @include transform(scale(1.1))
   }
   100% {
     @include transform(scale(1))

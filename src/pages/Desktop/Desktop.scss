@@ -14,7 +14,7 @@
   }
   .white-bottom {
     z-index: 0;
-    height: 218px;
+    height: 20%;
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -22,10 +22,10 @@
     background-color: rgba(255, 255, 255, 0.5);
   }
   .top-hot-spot {
-    width: 130px;
-    height: 162px;
+    width: 25%;
+    height: 20%;
     position: absolute;
-    top: 24px;
+    top: 0;
     z-index: 3;
     div {
       width: 100%;
@@ -34,38 +34,38 @@
       position: absolute;
     }
     .top-text {
-      font-size: 26px;
+      font-size: 5vw;
       font-family: FZKaTong;
-      top: 10px;
+      top: 15%;
     }
     .middle-text {
-      font-size: 60px;
-      font-family: SimHei;
-      top: 51px;
+      font-size: 8vw;
+      font-family: FZKaTong;
+      top: 35%;
       color: rgb(51, 51, 51);
     }
     .bottom-text {
-      font-size: 26px;
+      font-size: 5vw;
       font-family: ZHSRXT;
-      top: 130px;
-      color: #222020;
+      top: 75%;
+      color: #ffffff;
     }
   }
 
   .bottom-hot-spot {
-    width: 130px;
-    height: 133px;
+    width: 25%;
+    height: 20%;
     position: absolute;
-    bottom: 41px;
+    bottom: 0;
     z-index: 4;
   }
 
   .red-point {
     position: absolute;
     right: 0;
-    top: 0;
-    width: 40px;
-    height: 40px;
+    top: 15%;
+    width: 25%;
+    height: auto;
     z-index: 3
   }
   /*红点动画 1*/

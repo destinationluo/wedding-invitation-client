@@ -1,5 +1,12 @@
 @import "../../asset/css/util";
 
+.bg-img {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .dialing-page {
   .dialing-item {
     position: absolute;

@@ -22,19 +22,19 @@ export default class Call extends Component {
                 <div className="text-box">
                     <div className="text-title">
                         <p className="english">Our invitation</p>
-                        <p>金龙 & 蛋蛋的邀约</p>
+                        <p>何金成 & 罗倩的邀约</p>
                     </div>
                     <div className="text-content">
                         <p>各位亲朋好友：</p>
                         {userType == 'boy' ?
-                            <p>诚挚邀请您于2017年1月31日，星期二，08:00参加金龙和蛋蛋的结婚典礼。</p>
+                            <p>诚挚邀请您于2019年1月29日，星期二，11:00参加何金成和罗倩的结婚典礼。</p>
                             :
-                            <p>诚挚邀请您于2017年2月4日，星期六，11:00参加金龙和蛋蛋的结婚典礼。</p>
+                            <p>诚挚邀请您于2019年1月29日，星期二，11:00参加何金成和罗倩的结婚典礼。</p>
 
                         }
 
                         <p>您的到来是对我们最好的祝福，敬备喜宴，恭请光临。</p>
-                        <p>杭州的小伙伴，年后回杭另设宴席。</p>
+                        <p>北京的小伙伴，年后回京另设宴席。</p>
                     </div>
                 </div>
                 <Back position={"back-left-top"}/>

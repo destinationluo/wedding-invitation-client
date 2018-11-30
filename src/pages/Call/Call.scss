@@ -6,55 +6,53 @@
   }
   .img-line-1 {
     position: absolute;
-    width: 172px;
-    height: 172px;
-    bottom: 332px;
+    width: 30%;
+    bottom: 40%;
   }
   .tip {
-    left: 103px;
+    left: 20%;
   }
   .message {
-    right: 114px;
+    right: 20%;
   }
   .img-line-2 {
     position: absolute;
-    width: 163px;
-    height: 163px;
-    bottom: 90px;
+    width: 30%;
+    bottom: 10%;
   }
   .refuse {
-    left: 110px;
+    left: 10%;
   }
   .answer {
-    right: 110px;
+    right: 10%;
     @include animation(call-answer-animation 2s infinite);
   }
 
   /*接听按钮动画*/
   @keyframes call-answer-animation {
     20% {
-      @include transform(scale(1.1) rotate(0deg))
+      @include transform(scale(1.1))
     }
     30% {
-      @include transform(scale(1.1) rotate(10deg))
+      @include transform(scale(1.1))
     }
     40% {
-      @include transform(scale(1.1) rotate(-10deg))
+      @include transform(scale(1))
     }
     50% {
-      @include transform(scale(1.1) rotate(10deg))
+      @include transform(scale(1))
     }
     60% {
-      @include transform(scale(1.1) rotate(-10deg))
+      @include transform(scale(1.1))
     }
     70% {
-      @include transform(scale(1.1) rotate(10deg))
+      @include transform(scale(1.1))
     }
     80% {
-      @include transform(scale(1.1) rotate(-10deg))
+      @include transform(scale(1))
     }
     90% {
-      @include transform(scale(1.1) rotate(10deg))
+      @include transform(scale(1))
     }
   }
 }

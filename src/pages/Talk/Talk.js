@@ -13,6 +13,8 @@ const functionImg = require('./images/function.png');
 const hungUpImg = require('./images/hung-up.png');
 const boyMp3 = require('../../asset/audio/talk.mp3');
 const girlMp3 = require('../../asset/audio/talk-girl.mp3');
+import wxUtils from 'util/wxUtils'
+
 export default class Talk extends Component {
     constructor(props) {
         super(props);
@@ -37,10 +39,18 @@ export default class Talk extends Component {
     componentWillUnmount() {
         this.interval && clearInterval(this.interval);
         this.audioTimer && clearTimeout(this.audioTimer);
+        wxUtils.disabledToolbar();
     }
 
     _countDown(timestamp) {
-        var endTimestamp = 1577808000;
+        var endDate = new Date();
+        endDate.setYear(2019);
+        endDate.setMonth(0);
+        endDate.setDate(29);
+        endDate.setHours(11);
+        endDate.setMinutes(0);
+        endDate.setSeconds(0);
+        var endTimestamp = parseInt(endDate.valueOf() / 1000);
         if (timestamp == 0 || timestamp >= endTimestamp) {
             return '';
         }

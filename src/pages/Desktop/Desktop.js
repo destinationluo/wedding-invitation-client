@@ -19,6 +19,7 @@ const closeImg = require('./images/close.png');
 
 const audioMp3 = require('./audio/duang.mp3');
 const audioOgg = require('./audio/duang.ogg');
+import wxUtils from 'util/wxUtils'
 
 /*底部热点区组件*/
 class BottomHotSpot extends Component {
@@ -128,6 +129,7 @@ export default class Desktop extends Component {
 
     componentDidMount() {
         autoPlay('desktop-audio');
+        wxUtils.disabledToolbar();
     }
 
     render() {
@@ -138,18 +140,18 @@ export default class Desktop extends Component {
                 <div className="bg">
                     <div className="white-bottom"></div>
                     <img src={iconImg} className="icon"/>
-                    {/*上部热定区*/}
-                    <TopHotSpot left="27px" topText={userType == 'boy' ? '一月' : '2月'}
-                                middleText={userType == 'boy' ? '31' : '04'} bottomText={'日期'}
+                    {/*上部热点区*/}
+                    <TopHotSpot left="0%" topText={userType == 'boy' ? '一月' : '一月'}
+                                middleText={userType == 'boy' ? '29' : '29'} bottomText={'日期'}
                                 click={()=>this._redirectToUrl('/integrated')}/>
-                    <TopHotSpot left="180px" bottomText={'视频'} click={()=>this._openVideo()}/>
-                    <TopHotSpot left="332px" bottomText={'相册'} click={()=>this._redirectToUrl('/photos')}/>
-                    <TopHotSpot left="485px" bottomText={'祝福'} click={()=>this._openBless()}/>
+                    <TopHotSpot left="25%" bottomText={'视频'} click={()=>this._openVideo()}/>
+                    <TopHotSpot left="50%" bottomText={'相册'} click={()=>this._redirectToUrl('/photos')}/>
+                    <TopHotSpot left="75%" bottomText={'祝福'} click={()=>this._openBless()}/>
                     {/*下部热点区*/}
-                    <BottomHotSpot count={2} left="27px" animateType={2} toUrl={'/dialing'}/>
-                    <BottomHotSpot count={1} left="180px" animateType={2} toUrl={'/wechat'}/>
-                    <BottomHotSpot count={3} left="332px" animateType={1} toUrl={'/photograph'}/>
-                    <BottomHotSpot count={1} left="485px" toUrl={'/map'}/>
+                    <BottomHotSpot count={2} left="0%" animateType={2} toUrl={'/dialing'}/>
+                    <BottomHotSpot count={1} left="25%" animateType={2} toUrl={'/wechat'}/>
+                    <BottomHotSpot count={3} left="50%" animateType={1} toUrl={'/photograph'}/>
+                    <BottomHotSpot count={1} left="75%" toUrl={'/map'}/>
                 </div>
                 <audio className="hidden" autoPlay id="desktop-audio">
                     <source src={audioOgg} type="audio/ogg"/>

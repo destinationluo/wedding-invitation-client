@@ -15,6 +15,7 @@ const refuseImg = require('./images/refuse.png');
 const answerImg = require('./images/answer.png');
 const audioMp3 = require('./audio/calls.mp3');
 const audioOgg = require('./audio/calls.ogg');
+import wxUtils from 'util/wxUtils'
 
 export default class Call extends Component {
     constructor(props) {
@@ -35,6 +36,7 @@ export default class Call extends Component {
 
     componentWillUnmount() {
         this.audioTimer && clearTimeout(this.audioTimer);
+        wxUtils.disabledToolbar();
     }
 
     render() {

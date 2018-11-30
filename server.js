@@ -11,7 +11,7 @@ var compiler = webpack(config);
 app.use(history());
 
 app.use(proxy('/wedding', {
-    target: 'http://192.168.199.206:80',
+    target: 'http://192.168.199.153:80',
     changeOrigin: true
 }));
 
@@ -33,5 +33,5 @@ app.listen(8081, '0.0.0.0', (err) => {
         return;
     }
 
-    console.log('Listening at http://localhost:8081');
+    console.log('Listening at http://192.168.199.153:8081');
 });

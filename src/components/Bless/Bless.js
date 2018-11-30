@@ -31,6 +31,8 @@ export default class Bless extends Component {
 
     _restText() {
         this.refs.blessName.value = '';
+        this.refs.blessNum.value = 0;
+        this.refs.blessPhone.value = 0;
         this.refs.blessText.value = '';
     }
 
@@ -39,13 +41,23 @@ export default class Bless extends Component {
             return;
         }
         const name = this.refs.blessName.value;
+        const num = this.refs.blessNum.value;
+        const phone = this.refs.blessPhone.value;
         const text = this.refs.blessText.value;
         if (name == '') {
             alert('留下你的大名~~');
             return;
         }
+        if(num<0){
+            alert('参加人数不能是负数哟~~');
+            return;
+        }
+        if(phone<=0){
+            alert('输下手机号呗~~');
+            return;
+        }
         if (name.length > 24) {
-            alert('你名字填短点吧，放不下了~');
+            alert('你名字有点长哟~');
             return;
         }
         if (text == '') {
@@ -60,21 +72,13 @@ export default class Bless extends Component {
     }
 
     render() {
-        const blessPanel = this.props.bless.blesses.map((item, index)=> {
-            const itemClassName = index % 2 == 0 ? "bless-item bless-item-left" : "bless-item bless-item-right";
-            return (
-                <div className={itemClassName} key={index}>
-                    姓名：{item.name}（{item.time}）
-                    <br />
-                    祝福：{item.text}
-                </div>
-            );
-        });
         return (
             <div className="bless">
                 <div className="top-box">
                     <div className="left-box">
                         <input type="text" className="bless-name" ref="blessName" placeholder="请输入姓名"/>
+                        <input type="number" className="bless-phone" ref="blessPhone" placeholder="请输入手机号"/>
+                        <input type="number" className="bless-num" ref="blessNum" placeholder="确认参加人数"/>
                         <textarea className="bless-text" ref="blessText" placeholder="请输入祝福的话语">
                         </textarea>
                     </div>
@@ -88,5 +92,15 @@ export default class Bless extends Component {
                 </div>
             </div>
         )
+        const blessPanel = this.props.bless.blesses.map((item, index)=> {
+            const itemClassName = index % 2 == 0 ? "bless-item bless-item-left" : "bless-item bless-item-right";
+            return (
+                <div className={itemClassName} key={index}>
+                    姓名：{item.name}（{item.time}）
+                    <br />
+                    祝福：{item.text}
+                </div>
+            );
+        });
     }
 }
