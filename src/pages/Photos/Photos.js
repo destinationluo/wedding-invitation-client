@@ -11,16 +11,20 @@ const leftImg = require('./images/left.png');
 const rightImg = require('./images/right.png');
 
 const photos = [
-    require('../../asset/images/photos/photos/photo1.jpg'),
-    require('../../asset/images/photos/photos/photo2.jpg'),
-    require('../../asset/images/photos/photos/photo3.jpg'),
-    require('../../asset/images/photos/photos/photo4.jpg'),
-    require('../../asset/images/photos/photos/photo5.jpg'),
-    require('../../asset/images/photos/photos/photo6.jpg'),
-    require('../../asset/images/photos/photos/photo7.jpg'),
-    require('../../asset/images/photos/photos/photo8.jpg'),
-    require('../../asset/images/photos/photos/photo9.jpg'),
-    require('../../asset/images/photos/photos/photo10.jpg'),
+    require('../../asset/images/photos/photos/1.jpg'),
+    require('../../asset/images/photos/photos/2.jpg'),
+    require('../../asset/images/photos/photos/3.jpg'),
+    require('../../asset/images/photos/photos/4.jpg'),
+    require('../../asset/images/photos/photos/5.jpg'),
+    require('../../asset/images/photos/photos/6.jpg'),
+    require('../../asset/images/photos/photos/7.jpg'),
+    require('../../asset/images/photos/photos/8.jpg'),
+    require('../../asset/images/photos/photos/9.jpg'),
+    require('../../asset/images/photos/photos/10.jpg'),
+    require('../../asset/images/photos/photos/11.jpg'),
+    require('../../asset/images/photos/photos/12.jpg'),
+    require('../../asset/images/photos/photos/13.jpg'),
+    require('../../asset/images/photos/photos/14.jpg'),
 ]
 
 export default class Photos extends Component {

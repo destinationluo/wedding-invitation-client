@@ -17,8 +17,9 @@ const count2Img = require('./images/count-2.png');
 const count3Img = require('./images/count-3.png');
 const closeImg = require('./images/close.png');
 
-const audioMp3 = require('./audio/duang.mp3');
-const audioOgg = require('./audio/duang.ogg');
+// const audioMp3 = require('./audio/duang.mp3');
+// const audioOgg = require('./audio/duang.ogg');
+const unlockMp3 = require('./audio/unlock.mp3');
 import wxUtils from 'util/wxUtils'
 
 /*底部热点区组件*/
@@ -154,8 +155,7 @@ export default class Desktop extends Component {
                     <BottomHotSpot count={1} left="75%" toUrl={'/map'}/>
                 </div>
                 <audio className="hidden" autoPlay id="desktop-audio">
-                    <source src={audioOgg} type="audio/ogg"/>
-                    <source src={audioMp3} type="audio/mpeg"/>
+                    <source src={unlockMp3} type="audio/mpeg"/>
                 </audio>
 
                 {/*视频*/}

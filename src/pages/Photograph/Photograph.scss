@@ -31,10 +31,10 @@
     }
     .wedding {
       position: absolute;
-      top: 533px;
-      width: 400px;
-      left: 50%;
-      margin-left: -200px;
+      top: 50%;
+      width: 80%;
+      left: 10%;
+      //margin-left: -200px;
       @include transform(scale(1.5));
       opacity: 0;
     }
@@ -44,10 +44,10 @@
       background-color: rgba(0, 0, 0, 0.6);
       .love-start {
         position: absolute;
-        height: 195px;
-        left: 140px;
-        top: 533px;
-        width: 343px;
+        height: auto;
+        left: 10%;
+        top: 10%;
+        width: 80%;
       }
       .start-button {
         width: 323px;
@@ -57,7 +57,7 @@
         color: white;
         border-radius: 2px;
         position: absolute;
-        top: 770px;
+        top: 50%;
         left: 50%;
         margin-left: -161.5px;
         text-align: center;

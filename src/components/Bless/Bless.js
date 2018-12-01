@@ -31,8 +31,8 @@ export default class Bless extends Component {
 
     _restText() {
         this.refs.blessName.value = '';
-        this.refs.blessNum.value = 0;
         this.refs.blessPhone.value = 0;
+        this.refs.blessNum.value = 0;
         this.refs.blessText.value = '';
     }
 
@@ -48,27 +48,27 @@ export default class Bless extends Component {
             alert('留下你的大名~~');
             return;
         }
-        if(num<0){
-            alert('参加人数不能是负数哟~~');
-            return;
-        }
-        if(phone<=0){
-            alert('输下手机号呗~~');
-            return;
-        }
         if (name.length > 24) {
             alert('你名字有点长哟~');
             return;
         }
-        if (text == '') {
-            alert('说点什么吧~亲。');
+        if (phone <= 0) {
+            alert('输下手机号呗~~');
+            return;
+        }
+        var tel = phone; //获取手机号
+        var telReg = !!tel.match(/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/);
+        //如果手机号码不能通过验证
+        if (telReg == false) {
+            alert('你的手机号有点奇怪哟~~');
             return;
         }
         if (text.length > 200) {
             alert('祝福最多200个字，太多了放不下啊~');
             return;
         }
-        this.props.commitBless(name, text, ()=>this._restText());
+        alert('我收到啦!');
+        this.props.commitBless(name, phone, num, text, ()=>this._restText());
     }
 
     render() {
@@ -78,7 +78,15 @@ export default class Bless extends Component {
                     <div className="left-box">
                         <input type="text" className="bless-name" ref="blessName" placeholder="请输入姓名"/>
                         <input type="number" className="bless-phone" ref="blessPhone" placeholder="请输入手机号"/>
-                        <input type="number" className="bless-num" ref="blessNum" placeholder="确认参加人数"/>
+                        <select className="bless-num" ref="blessNum">
+                            <option value="0">有事来不了~</option>
+                            <option value="1">1个人</option>
+                            <option value="2">2个人</option>
+                            <option value="3">3个人</option>
+                            <option value="4">4个人</option>
+                            <option value="5">5个人</option>
+                            <option value="6">6个人</option>
+                        </select>
                         <textarea className="bless-text" ref="blessText" placeholder="请输入祝福的话语">
                         </textarea>
                     </div>

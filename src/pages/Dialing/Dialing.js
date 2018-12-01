@@ -41,7 +41,7 @@ export default class Dialing extends Component {
     render() {
         return (
             <div className="full-page dialing-page">
-                <BgImg src={bgImg} animate={false}/>
+                <BgImg src={bgImg} animate={false} fillAll={true}/>
                 <a className="dialing-item dialing-item-1" href="tel:17710122410">
                     <img src={itemImg}/>
                     <p>何金成</p>

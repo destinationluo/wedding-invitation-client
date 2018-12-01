@@ -12,10 +12,11 @@ const bgImg = require('./images/bg.jpg');
 const returnImg = require('../../asset/images/return.png');
 const boyImg = require('../../asset/images/photos/wechat-boy.jpg');
 const girlImg = require('../../asset/images/photos/wechat-girl.jpg');
-const groupImg = require('./images/wechat-group.png');
 
 const boyAudioMp3 = require('../../asset/audio/wechat-boy.mp3');
 const girlAudioMp3 = require('../../asset/audio/wechat-girl.mp3');
+
+const msgMp3 = require('./audio/msg.mp3');
 
 class WechatItem extends Component {
 
@@ -29,6 +30,9 @@ class WechatItem extends Component {
                     <p className={middleText ? 'middle-text' : 'hidden'}>{middleText}</p>
                     <p className={bottomText ? 'bottom-text' : 'hidden'}>{bottomText}</p>
                 </div>
+                <audio className="hidden" id="msg-audio" autoPlay>
+                    <source src={msgMp3} type="audio/mpeg"/>
+                </audio>
             </div>
         )
     }
@@ -59,7 +63,7 @@ export default class Wechat extends Component {
     render() {
         return (
             <div className="full-page wechat-page">
-                <BgImg src={bgImg} animate={false}/>
+                <BgImg src={bgImg} animate={false} fillAll={true}/>
                 <WechatItem avatar={boyImg} topText={'何金成'} bottomText={'[语音]'} animateClass={'wechat-item-animate-1'}
                             click={()=>this._playBoyAudio()}/>
                 <WechatItem avatar={girlImg} topText={'罗倩'} bottomText={'[语音]'} animateClass={'wechat-item-animate-2'}

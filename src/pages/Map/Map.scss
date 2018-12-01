@@ -11,4 +11,25 @@
     height: 117px;
     z-index: 3;
   }
+
+  .custom-input-card{
+    width: 18rem;
+  }
+
+  .custom-input-card .btn:last-child{
+    margin-left: 1rem;
+  }
+
+  .content-window-card{
+    position: relative;
+    width: 23rem;
+    padding: 0.75rem 0 0 1.25rem;
+    box-shadow: none;
+    bottom: 0;
+    left: 0;
+  }
+
+  .content-window-card p{
+    height: 2rem;
+  }
 }

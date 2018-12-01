@@ -7,9 +7,10 @@ import './BgImg.scss';
 
 export default class Loading extends Component {
     render() {
-        const {src, animate} = this.props;
+        const {src, animate, fillAll=false} = this.props;
         return (
-            <div className={animate ? 'bg-img bg-img-animate' : 'bg-img'}>
+            <div
+                className={animate ? (fillAll? 'bg-img-all bg-img-animate': 'bg-img bg-img-animate'):(fillAll? 'bg-img-all':'bg-img')}>
                 <img src={src}/>
             </div>
         )

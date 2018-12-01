@@ -49,11 +49,11 @@ export function getBless() {
     }
 }
 
-export function commitBless(name, text, callback) {
+export function commitBless(name, phone, num, text, callback) {
     return {
         //type: GET_BLESS_SUCCESS
         types: [COMMIT_BLESS, COMMIT_BLESS_SUCCESS, COMMIT_BLESS_FAIL],
-        promise: client=>client.post(`/wedding/commitBless.php?name=${name}&text=${text}`,),
+        promise: client=>client.post(`/wedding/commitBless.php?name=${name}&text=${text}&phone=${phone}&num=${num}`,),
         afterSuccess: (dispatch, getState, response)=> {
             console.log(response.data);
             if (response.data.success) {
@@ -62,7 +62,7 @@ export function commitBless(name, text, callback) {
                 }
                 dispatch(getBless());
             } else {
-                alert("提交失败!");
+                alert("服务器出了点问题呢!你可以单发给我吗?谢啦!");
             }
         }
     }

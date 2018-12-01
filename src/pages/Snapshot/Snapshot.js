@@ -7,8 +7,6 @@ import './Snapshot.scss';
 import  Back from 'components/Back/Back';
 import BgImg from '../../components/BgImg/BgImg';
 
-const firstImg = require('asset/images/photos/snapshot-1.jpg');
-const secondImg = require('asset/images/photos/snapshot-2.jpg');
 const bgImg = require('./images/camera.png');
 export default class Snapshot extends Component {
     constructor(props) {
@@ -19,9 +17,7 @@ export default class Snapshot extends Component {
     render() {
         return (
             <div className="full-page snapshot-page">
-                <BgImg src={bgImg} animate={false}/>
-                <img src={firstImg} className="first-img photo"/>
-                <img src={secondImg} className="second-img photo"/>
+                <BgImg src={bgImg} animate={false}  fillAll={true}/>
                 <Back position={"back-left-top"}/>
             </div>
         );

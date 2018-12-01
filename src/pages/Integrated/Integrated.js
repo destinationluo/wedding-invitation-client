@@ -75,13 +75,6 @@ export default class Integrated extends Component {
                     <IntegratedItem
                         position="item-2"
                         imgSrc={circle2Img}
-                        title="播映快照"
-                        intro="独家收藏"
-                        click={()=>this._redirectToSnapshot()}
-                    />
-                    <IntegratedItem
-                        position="item-3"
-                        imgSrc={circle2Img}
                         title="好友动态"
                         intro="祝福留言"
                         click={()=>this._openBless()}

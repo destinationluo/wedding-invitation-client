@@ -13,8 +13,8 @@ const tipImg = require('./images/tip.png');
 const messageImg = require('./images/message.png');
 const refuseImg = require('./images/refuse.png');
 const answerImg = require('./images/answer.png');
-const audioMp3 = require('./audio/calls.mp3');
-const audioOgg = require('./audio/calls.ogg');
+const iosMp3 = require('./audio/ios.mp3');
+
 import wxUtils from 'util/wxUtils'
 
 export default class Call extends Component {
@@ -51,8 +51,7 @@ export default class Call extends Component {
                     <img className="answer img-line-2" src={answerImg} onClick={()=>this._redirectToTalk()}/>
                 </div>
                 <audio className="hidden" id="call-audio" autoPlay loop>
-                    <source src={audioOgg} type="audio/ogg"/>
-                    <source src={audioMp3} type="audio/mpeg"/>
+                    <source src={iosMp3} type="audio/mpeg"/>
                 </audio>
             </div>
         );

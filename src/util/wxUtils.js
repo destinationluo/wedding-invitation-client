@@ -63,11 +63,11 @@ function onBridgeReady(disable = true) {
  */
 
 wxUtils.disabledToolbar = function (disable = true) {
-    console.log('disabledToolbar ', disable);
-    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-        // 通过下面这个API隐藏底部导航栏
-        WeixinJSBridge.call(disable ? 'hideToolbar' : 'showToolbar');
-    });
+    // console.log('disabledToolbar ', disable);
+    // document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    //     // 通过下面这个API隐藏底部导航栏
+    //     WeixinJSBridge.call(disable ? 'hideToolbar' : 'showToolbar');
+    // });
 };
 
 /**

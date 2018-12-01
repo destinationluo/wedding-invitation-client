@@ -12,7 +12,6 @@ const bgImg = require('../../asset/images/photos/talk-bg.jpg');
 const functionImg = require('./images/function.png');
 const hungUpImg = require('./images/hung-up.png');
 const boyMp3 = require('../../asset/audio/talk.mp3');
-const girlMp3 = require('../../asset/audio/talk-girl.mp3');
 import wxUtils from 'util/wxUtils'
 
 export default class Talk extends Component {
@@ -82,7 +81,7 @@ export default class Talk extends Component {
                     <img className="hung-up" src={hungUpImg} onClick={()=>this._redirectToDesktop()}/>
                 </div>
                 <audio className="hidden" id="talk-audio">
-                    <source src={userType == 'boy' ? boyMp3 : girlMp3} type="audio/mpeg"/>
+                    <source src={boyMp3} type="audio/mpeg"/>
                 </audio>
             </div>
         )
