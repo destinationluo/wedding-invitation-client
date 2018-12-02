@@ -11,7 +11,7 @@ var compiler = webpack(config);
 app.use(history());
 
 app.use(proxy('/wedding', {
-    target: 'http://192.168.199.153:3000',
+    target: 'http://yumeiyoga.com:2000',
     changeOrigin: true
 }));
 
@@ -26,11 +26,11 @@ app.use('/asset', express.static(__dirname + '/src/asset'));
 //     response.sendFile(path.resolve(__dirname, 'assets', 'index-template.html'))
 // });
 
-app.listen(8081, '0.0.0.0', (err) => {
+app.listen(2001, '0.0.0.0', (err) => {
     if (err) {
         console.log(err);
         return;
     }
 
-    console.log('Listening at http://192.168.199.153:8081');
+    console.log('Listening at http://yumeiyoga.com:2001');
 });

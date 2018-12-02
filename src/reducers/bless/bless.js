@@ -41,15 +41,22 @@ export default function reducer(state = initialState, action = {}) {
     }
 }
 
-export function getBless() {
+export function getBless(props) {
     return {
         //type: GET_BLESS_SUCCESS
         types: [GET_BLESS, GET_BLESS_SUCCESS, GET_BLESS_FAIL],
         promise: client=>client.post(`/wedding/getBless`),
+        afterSuccess: (dispatch, getState, response)=> {
+            // console.log(response.data);
+            if (props == undefined) {
+                return;
+            }
+            props.bless.blesses = response.data;
+        }
     }
 }
 
-export function commitBless(name, phone, num, text, callback) {
+export function commitBless(props, name, phone, num, text, callback) {
     return {
         //type: GET_BLESS_SUCCESS
         types: [COMMIT_BLESS, COMMIT_BLESS_SUCCESS, COMMIT_BLESS_FAIL],
@@ -60,7 +67,7 @@ export function commitBless(name, phone, num, text, callback) {
                 if (callback) {
                     callback();
                 }
-                dispatch(getBless());
+                dispatch(getBless(props));
             } else {
                 alert("服务器出了点问题呢!你可以单发给我吗?谢啦!");
             }

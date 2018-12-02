@@ -24,7 +24,7 @@ export default class Bless extends Component {
     }
 
     componentDidMount() {
-        this.props.getBless();
+        this.props.getBless(this.props);
         /*防止软键盘弹出 挤压屏幕*/
         document.getElementsByTagName('html')[0].style.height = document.body.clientHeight + 'px';
     }
@@ -52,26 +52,38 @@ export default class Bless extends Component {
             alert('你名字有点长哟~');
             return;
         }
-        if (phone <= 0) {
-            alert('输下手机号呗~~');
-            return;
-        }
-        var tel = phone; //获取手机号
-        var telReg = !!tel.match(/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/);
-        //如果手机号码不能通过验证
-        if (telReg == false) {
-            alert('你的手机号有点奇怪哟~~');
-            return;
+        // if (phone <= 0) {
+        //     alert('输下手机号呗~~');
+        //     return;
+        // }
+        if (phone > 0) {
+            var tel = phone; //获取手机号
+            var telReg = !!tel.match(/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/);
+            //如果手机号码不能通过验证
+            if (telReg == false) {
+                alert('你的手机号有点奇怪哟~~');
+                return;
+            }
         }
         if (text.length > 200) {
             alert('祝福最多200个字，太多了放不下啊~');
             return;
         }
         alert('我收到啦!');
-        this.props.commitBless(name, phone, num, text, ()=>this._restText());
+        this.props.commitBless(this.props, name, phone, num, text, ()=>this._restText());
     }
 
     render() {
+        const blessPanel = this.props.bless.blesses.map((item, index)=> {
+            const itemClassName = index % 2 == 0 ? "bless-item bless-item-left" : "bless-item bless-item-right";
+            return (
+                <div className={itemClassName} key={index}>
+                    姓名：{item.name}（{item.create_time}）
+                    <br />
+                    祝福：{item.text}
+                </div>
+            );
+        });
         return (
             <div className="bless">
                 <div className="top-box">
@@ -80,7 +92,7 @@ export default class Bless extends Component {
                         <input type="number" className="bless-phone" ref="blessPhone" placeholder="请输入手机号"/>
                         <select className="bless-num" ref="blessNum">
                             <option value="0">有事来不了~</option>
-                            <option value="1">1个人</option>
+                            <option value="1" selected="selected">1个人</option>
                             <option value="2">2个人</option>
                             <option value="3">3个人</option>
                             <option value="4">4个人</option>
@@ -100,15 +112,5 @@ export default class Bless extends Component {
                 </div>
             </div>
         )
-        const blessPanel = this.props.bless.blesses.map((item, index)=> {
-            const itemClassName = index % 2 == 0 ? "bless-item bless-item-left" : "bless-item bless-item-right";
-            return (
-                <div className={itemClassName} key={index}>
-                    姓名：{item.name}（{item.time}）
-                    <br />
-                    祝福：{item.text}
-                </div>
-            );
-        });
     }
 }
