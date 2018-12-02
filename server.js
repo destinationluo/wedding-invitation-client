@@ -11,7 +11,7 @@ var compiler = webpack(config);
 app.use(history());
 
 app.use(proxy('/wedding', {
-    target: 'http://192.168.199.153:80',
+    target: 'http://192.168.199.153:3000',
     changeOrigin: true
 }));
 
@@ -27,7 +27,6 @@ app.use('/asset', express.static(__dirname + '/src/asset'));
 // });
 
 app.listen(8081, '0.0.0.0', (err) => {
-// app.listen(8081, (err) => {
     if (err) {
         console.log(err);
         return;

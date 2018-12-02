@@ -45,7 +45,7 @@ export function getBless() {
     return {
         //type: GET_BLESS_SUCCESS
         types: [GET_BLESS, GET_BLESS_SUCCESS, GET_BLESS_FAIL],
-        promise: client=>client.post(`/wedding/getBless.php`),
+        promise: client=>client.post(`/wedding/getBless`),
     }
 }
 
@@ -53,7 +53,7 @@ export function commitBless(name, phone, num, text, callback) {
     return {
         //type: GET_BLESS_SUCCESS
         types: [COMMIT_BLESS, COMMIT_BLESS_SUCCESS, COMMIT_BLESS_FAIL],
-        promise: client=>client.post(`/wedding/commitBless.php?name=${name}&text=${text}&phone=${phone}&num=${num}`,),
+        promise: client=>client.post(`/wedding/commitBless?name=${name}&text=${text}&phone=${phone}&num=${num}`,),
         afterSuccess: (dispatch, getState, response)=> {
             console.log(response.data);
             if (response.data.success) {
