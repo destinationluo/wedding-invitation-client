@@ -162,7 +162,7 @@ export default class Desktop extends Component {
                 {this.state.videoShow ?
                     <div className='video' onClick={()=>this._closeVideo()}>
                         <img src={closeImg} className="close" onClick={()=>this._closeVideo()}/>
-                        <iframe src="https://v.qq.com/iframe/player.html?vid=d0362vjag67&tiny=0&auto=0"
+                        <iframe src="http://pj42rsz6v.bkt.clouddn.com/wedding.mp4"
                                 onClick={(e)=>e.preventDefault()}></iframe>
                     </div>
                     :
