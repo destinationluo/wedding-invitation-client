@@ -47,7 +47,7 @@ export default class Talk extends Component {
         endDate.setMonth(0);
         endDate.setDate(29);
         endDate.setHours(11);
-        endDate.setMinutes(0);
+        endDate.setMinutes(38);
         endDate.setSeconds(0);
         var endTimestamp = parseInt(endDate.valueOf() / 1000);
         if (timestamp == 0 || timestamp >= endTimestamp) {
