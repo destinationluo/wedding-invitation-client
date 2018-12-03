@@ -25,6 +25,8 @@ export default class Call extends Component {
 
 
     _redirectToTalk() {
+        sessionStorage.setItem('conductor_date', true);
+        sessionStorage.setItem('conductor_map', true);
         browserHistory.push({
             pathname: '/talk'
         });

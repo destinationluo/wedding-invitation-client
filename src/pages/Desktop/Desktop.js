@@ -12,13 +12,11 @@ import BgImg from '../../components/BgImg/BgImg';
 
 const bgImg = require('../../asset/images/photos/desktop-bg.jpg');
 const iconImg = require('./images/icon.png');
+const hand = require('./images/hand2.png');
 const count1Img = require('./images/count-1.png');
 const count2Img = require('./images/count-2.png');
 const count3Img = require('./images/count-3.png');
 const closeImg = require('./images/close.png');
-
-// const audioMp3 = require('./audio/duang.mp3');
-// const audioOgg = require('./audio/duang.ogg');
 const unlockMp3 = require('./audio/unlock.mp3');
 import wxUtils from 'util/wxUtils'
 
@@ -41,6 +39,10 @@ class BottomHotSpot extends Component {
     }
 
     _redirectToUrl(url) {
+        if (url == '/map') {
+            // 地图特殊处理，去掉引导手势
+            sessionStorage.setItem('conductor_map', false);
+        }
         browserHistory.push({
             pathname: url
         });
@@ -51,12 +53,13 @@ class BottomHotSpot extends Component {
         const redPointClassName = this.props.animateType ? `red-point  red-point-animate-${this.props.animateType}` : `red-point`;
         return (
             <div className="bottom-hot-spot" style={{left: this.props.left}}
-                 onClick={()=>this._redirectToUrl(this.props.toUrl)}>
+                 onClick={() => this._redirectToUrl(this.props.toUrl)}>
                 <img className={redPointClassName} src={countImg}/>
             </div>
         )
     };
 }
+
 /*头部热点区组件*/
 class TopHotSpot extends Component {
     /*
@@ -69,7 +72,7 @@ class TopHotSpot extends Component {
         const middleText = this.props.middleText;
         const bottomText = this.props.bottomText;
         return (
-            <div className="top-hot-spot" style={{left: this.props.left}} onClick={()=>this.props.click()}>
+            <div className="top-hot-spot" style={{left: this.props.left}} onClick={() => this.props.click()}>
                 {topText ?
                     <div className="top-text">{topText}</div>
                     :
@@ -89,12 +92,15 @@ class TopHotSpot extends Component {
         )
     };
 }
+
 export default class Desktop extends Component {
     constructor(props) {
         super(props);
         this.state = {
             videoShow: false,
-            blessShow: false
+            blessShow: false,
+            conductor_date: sessionStorage.getItem('conductor_date'),
+            conductor_map: sessionStorage.getItem('conductor_map')
         }
     }
 
@@ -123,6 +129,10 @@ export default class Desktop extends Component {
     }
 
     _redirectToUrl(url) {
+        if (url == '/integrated') {
+            // 日期特殊处理，去掉引导手势
+            sessionStorage.setItem('conductor_date', false);
+        }
         browserHistory.push({
             pathname: url
         });
@@ -141,13 +151,27 @@ export default class Desktop extends Component {
                 <div className="bg">
                     <div className="white-bottom"></div>
                     <img src={iconImg} className="icon"/>
+                    {console.log(sessionStorage.getItem('conductor_date'))}
+                    {sessionStorage.getItem('conductor_date') == 'true' ?
+                        <div><img src={hand} className="date-hand"/></div>
+                        :
+                        ''
+                    }
+                    {console.log(sessionStorage.getItem('conductor_map'))}
+                    {sessionStorage.getItem('conductor_map') == 'true' ?
+                        <div><img src={hand} className="map-hand"/></div>
+                        :
+                        ''
+                    }
                     {/*上部热点区*/}
                     <TopHotSpot left="0%" topText={userType == 'boy' ? '一月' : '一月'}
                                 middleText={userType == 'boy' ? '29' : '29'} bottomText={'日期'}
-                                click={()=>this._redirectToUrl('/integrated')}/>
-                    <TopHotSpot left="25%" bottomText={'视频'} click={()=>this._openVideo()}/>
-                    <TopHotSpot left="50%" bottomText={'相册'} click={()=>this._redirectToUrl('/photos')}/>
-                    <TopHotSpot left="75%" bottomText={'祝福'} click={()=>this._openBless()}/>
+                                click={() => {
+                                    this._redirectToUrl('/integrated');
+                                }}/>
+                    <TopHotSpot left="25%" bottomText={'视频'} click={() => this._openVideo()}/>
+                    <TopHotSpot left="50%" bottomText={'相册'} click={() => this._redirectToUrl('/photos')}/>
+                    <TopHotSpot left="75%" bottomText={'祝福'} click={() => this._openBless()}/>
                     {/*下部热点区*/}
                     <BottomHotSpot count={2} left="0%" animateType={2} toUrl={'/dialing'}/>
                     <BottomHotSpot count={1} left="25%" animateType={2} toUrl={'/wechat'}/>
@@ -160,17 +184,17 @@ export default class Desktop extends Component {
 
                 {/*视频*/}
                 {this.state.videoShow ?
-                    <div className='video' onClick={()=>this._closeVideo()}>
-                        <img src={closeImg} className="close" onClick={()=>this._closeVideo()}/>
+                    <div className='video' onClick={() => this._closeVideo()}>
+                        <img src={closeImg} className="close" onClick={() => this._closeVideo()}/>
                         <iframe src="http://pj42rsz6v.bkt.clouddn.com/wedding.mp4"
-                                onClick={(e)=>e.preventDefault()}></iframe>
+                                onClick={(e) => e.preventDefault()}></iframe>
                     </div>
                     :
                     ''
                 }
                 {/*祝福*/}
                 {this.state.blessShow ?
-                    <Bless close={()=> this._closeBless()}/>
+                    <Bless close={() => this._closeBless()}/>
                     : ''
                 }
             </div>
