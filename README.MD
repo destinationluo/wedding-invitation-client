@@ -26,8 +26,7 @@
 后端工程地址：
 
 1. 实现后端API接口
-2. 新建数据库，执行`php/wedding.sql`，修改`getBless.php`与`commitBless.php`中数据库相关配置。
-3. 修改`server.js`,修改端口为相应的后端端口。
+2. 修改`server.js`,修改端口为相应的后端端口。
    ```
    app.use(proxy('/wedding', {
        target: 'http://localhost:80',
