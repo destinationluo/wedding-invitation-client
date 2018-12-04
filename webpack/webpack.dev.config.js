@@ -23,7 +23,7 @@ module.exports = {
     output: {
         path: DIST_PATH,
         filename: 'bundle.js',
-        publicPath: 'http://192.168.199.206:8081/'
+        publicPath: 'http://localhost:8081/'
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),

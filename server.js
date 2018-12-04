@@ -10,9 +10,9 @@ var compiler = webpack(config);
 
 app.use(history());
 
-var frontIp = "192.168.199.206"
+var frontIp = "localhost"
 var frontPort = 8081
-var backIp = "yumeiyoga.com"
+var backIp = "localhost"
 var backPort = 2000
 
 app.use(proxy('/wedding', {

@@ -29,7 +29,7 @@ module.exports = {
     output: {
         path: DIST_PATH,
         /*静态资源路径*/
-        publicPath: "http://192.168.199.206:8081/",
+        publicPath: "/",
         filename: '[name].[chunkhash:5].chunk.js'
     },
     plugins: [
