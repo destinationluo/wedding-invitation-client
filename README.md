@@ -1,4 +1,4 @@
-# 创意婚礼请柬
+# 创意婚礼请柬微信端
 
 点这里预览下:[这里](http://lamolilaguanfang.com:1314)
 
@@ -25,7 +25,7 @@
 我有采用的Node Express提供API接口的例子，你可以自行实现，也可以直接采用我的后端工程。
 后端工程地址：
 
-1. 实现后端API接口
+1. 实现后端API接口(接口参数类型参照/src/reducers/bless/bless.js文件，或者参考我的Node工程)
 2. 修改`server.js`,修改端口为相应的后端端口。
    ```
    app.use(proxy('/wedding', {
