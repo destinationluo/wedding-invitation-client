@@ -9,6 +9,7 @@ import {autoPlay} from 'util/audioAutoPlay'
 
 import Bless from '../../components/Bless/Bless';
 import BgImg from '../../components/BgImg/BgImg';
+import emitter from "../../components/Events/ev";
 
 const bgImg = require('../../asset/images/photos/desktop-bg.jpg');
 const iconImg = require('./images/icon.png');
@@ -102,15 +103,18 @@ export default class Desktop extends Component {
             conductor_date: sessionStorage.getItem('conductor_date'),
             conductor_map: sessionStorage.getItem('conductor_map')
         }
+        emitter.emit("callMusic", "play");
     }
 
     _openVideo() {
+        emitter.emit("callMusic", "pause");
         this.setState({
             videoShow: true
         });
     }
 
     _closeVideo() {
+        emitter.emit("callMusic", "play");
         this.setState({
             videoShow: false
         });
